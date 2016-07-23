@@ -1,0 +1,8 @@
+CMAKE_MINIMUM_REQUIRED( VERSION 3.5.0 )
+
+FILE(GLOB AllSources src/*.c)
+
+ADD_EXECUTABLE(AllMain ${AllSources})
+
+
+

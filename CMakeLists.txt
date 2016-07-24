@@ -19,5 +19,5 @@ foreach(testSrc ${TestSources})
   add_executable(${testName} ${testSrc})
   target_link_libraries(${testName} lgc_lib)
 
-  add_test(${testName} ${testName})
+  add_test(${testName} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${testName})
 endforeach(testSrc)

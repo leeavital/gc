@@ -18,4 +18,6 @@ int main() {
     lgc_object_t *item = lst.objects[i]; 
     assert(item == &obj);
   }
+
+  lgc_objectlist_free(&lst);
 }

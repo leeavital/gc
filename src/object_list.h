@@ -18,5 +18,4 @@ lgc_objectlist_t lgc_objectlist_create();
 void lgc_objectlist_push(lgc_objectlist_t* list, lgc_object_t *obj);
 
 void lgc_objectlist_free(lgc_objectlist_t*);
-
 #endif

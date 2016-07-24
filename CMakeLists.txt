@@ -1,8 +1,10 @@
-CMAKE_MINIMUM_REQUIRED( VERSION 3.5.0 )
+cmake_minimum_required( VERSION 3.5.0 )
 
-FILE(GLOB AllSources src/*.c)
-FILE(GLOB TestSources tests/*.c)
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY build/)
 
+
+file(GLOB AllSources src/*.c)
+file(GLOB TestSources tests/*.c)
 
 add_library(thelib ${AllSources})
 

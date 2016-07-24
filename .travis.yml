@@ -1,0 +1,5 @@
+langauge: c
+script:
+  - cmake .
+  - make
+  - make test

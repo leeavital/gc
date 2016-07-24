@@ -22,3 +22,7 @@ void lgc_objectlist_push(lgc_objectlist_t* list, lgc_object_t *obj) {
     list->capacity = new_capacity;
   }
 }
+
+void lgc_objectlist_free(lgc_objectlist_t* lst) {
+  free(lst->objects);
+}

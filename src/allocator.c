@@ -16,7 +16,7 @@ lgc_object_t lgc_allocate(int size) {
   return obj;
 }
 
-lgc_object_t lgc_string(char* str) {
+lgc_object_t lgc_string(char *str) {
   lgc_object_t obj;
 
   obj.memory_type = STR;

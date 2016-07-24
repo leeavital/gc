@@ -7,7 +7,14 @@ int main() {
 
   lgc_objectlist_t lst = lgc_objectlist_create();
 
-  for (int i = 0; i < 15; i++) {
+  for (int i = 0; i < 9; i++) {
+    lgc_objectlist_push(&lst, &obj); 
+  }
+
+  assert(lst.size == 9);
+  assert(lst.capacity == 10);
+
+  for (int i = 0; i < 6; i++) {
     lgc_objectlist_push(&lst, &obj); 
   }
 

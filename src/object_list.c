@@ -18,7 +18,7 @@ void lgc_objectlist_push(lgc_objectlist_t* list, lgc_object_t *obj) {
 
   if (list->size == list->capacity) {
     int new_capacity = list->capacity * 2;
-    realloc(list->objects, sizeof(lgc_object_t*) * new_capacity); 
+    realloc(list->objects, sizeof(lgc_object_t*) * new_capacity);
     list->capacity = new_capacity;
   }
 }

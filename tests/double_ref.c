@@ -2,7 +2,7 @@
 #include <assert.h>
 
 int main() {
-  lgc_object_t root =  lgc_allocate(1);
+  lgc_object_t root = lgc_allocate(1);
   lgc_object_t next = lgc_allocate(1);
 
   lgc_reference(&root, &next);

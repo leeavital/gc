@@ -35,6 +35,4 @@ int main() {
   assert(left.out_reference_count == 0);
   assert(right.in_reference_count == 0);
   assert(right.out_reference_count == 0);
-
-
 }

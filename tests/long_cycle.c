@@ -2,7 +2,7 @@
 #include <assert.h>
 
 int main() {
-  lgc_object_t one =  lgc_allocate(1);
+  lgc_object_t one = lgc_allocate(1);
   lgc_object_t two = lgc_allocate(1);
   lgc_object_t three = lgc_allocate(1);
 
@@ -12,7 +12,6 @@ int main() {
 
   assert(one.out_reference_count == 1);
   assert(one.in_reference_count == 1);
-
 
   lgc_print_object(&one);
 

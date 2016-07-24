@@ -1,12 +1,7 @@
 #include <stdlib.h>
 
 #include "allocator.h"
-
-lgc_context_t lgc_new_context() {
-  lgc_context_t ctx;
-  ctx.number_objects = 0;
-  return ctx;
-}
+#include <stdio.h>
 
 lgc_object_t lgc_allocate(int size) {
   void* data = malloc(size);
@@ -21,7 +16,6 @@ lgc_object_t lgc_allocate(int size) {
 }
 
 void lgc_reference(lgc_object_t* from, lgc_object_t* to) {
-  //TODO: check for dupes
   from->objects[from->out_reference_count] = to;
   from->out_reference_count += 1;
   to->in_reference_count += 1;
@@ -41,4 +35,10 @@ void lgc_free(lgc_object_t* obj) {
   } else if (obj->in_reference_count < 0) {
     //probably a double free 
   }
+}
+
+void lgc_print_object(lgc_object_t* obj) {
+  printf("Object{in_reference_count=%d, \
+      out_reference_count=%d}\n",
+      obj->in_reference_count, obj->out_reference_count);
 }

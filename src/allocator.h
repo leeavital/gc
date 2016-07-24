@@ -3,20 +3,39 @@
 
 typedef struct lgc_object_t lgc_object_t;
 
+enum lgc_memory_type_t {
+  HEAP, STR
+};
+
 struct lgc_object_t {
   lgc_object_t **objects;
-  void *data; // the data!
+  
+  // see lgc_memory_type_t
+  enum lgc_memory_type_t memory_type;
+  union {
+    void* heapMemory;
+    char* constString;
+  } data;
+
+
+  // counters for how many objects reference this object and how many objects this object refernces.
+  // when the former reaches zero, this object can be freed along with any objects who have this object
+  // their sole parent.
   int in_reference_count;
-  int out_reference_count; // this is effectively how many elements are in
-                           // objects
+  int out_reference_count;
 };
 
 /**
- * allocator an lgc_object_t on the heap. The allocated memory can be safely
+ * allocate an lgc_object_t on the heap. The allocated memory can be safely
  * freed
  * using lgc_free.
  */
 lgc_object_t lgc_allocate(int size);
+
+/**
+ * allocate an object which points to a string.
+ */
+lgc_object_t lgc_string(char* str);
 
 /**
  * Safely free any heap data contained in the passed lgc_object_t

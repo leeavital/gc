@@ -1,4 +1,4 @@
-A naive reference-counting memory allocation library for C. Not to be take seriously.
+A naive reference-counting memory allocation library for C. Not to be taken seriously.
 
 [![Build Status](https://travis-ci.org/leeavital/gc.svg?branch=master)](https://travis-ci.org/leeavital/gc)
 
